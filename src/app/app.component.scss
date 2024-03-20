@@ -1,0 +1,30 @@
+.grid-wraper{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #d5d5d8cc;
+}
+
+.gird-navbar{
+    position: absolute;
+    height: 100vh;
+    width: 200px;
+    background-color: rgb(197, 197, 226);
+    top: 100px;
+    left: 0;
+}
+
+.grid-student{
+    position: absolute;
+    background-color: rgb(187, 187, 246);
+    height: 100vh;
+    width: 86.4%;
+    top: 100px;
+    left: 200px;
+}
+
+.grid-toolbar{
+    height: 100px;
+
+
+}
