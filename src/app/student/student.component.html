@@ -1,7 +1,10 @@
 <ul>
-    <li>Matias</li>
-    <li>Jose</li>
-    <li>Lucas</li>
-    <li>Juan</li>
-    <li>Valeria</li>
+    <li *ngFor="let student of Students">
+       Name: {{ student.Name }}
+        <br>
+       Age: {{ student.Age }}
+        <br>
+       Class: {{ student.Class }}
+       <br><br>
+    </li>
 </ul>
