@@ -1,10 +1,53 @@
-<ul>
-    <li *ngFor="let student of Students">
-       Name: {{ student.Name }}
-        <br>
-       Age: {{ student.Age }}
-        <br>
-       Class: {{ student.Class }}
-       <br><br>
-    </li>
-</ul>
+<div class="row">
+    <div class="col-6">
+        <ul>
+            <li *ngFor="let student of Students">
+                Name: {{ student.Name }}
+                <br>
+                Age: {{ student.Age }}
+                <br>
+                Class: {{ student.Class }}
+                <br><br>
+            </li>
+        </ul>
+    </div>
+    <div class="col-6">
+        <button (click)="showStudent()">Agregar Alumno</button>
+
+        <div *ngIf="showForm">
+
+            <form [formGroup]="myForm">
+                <div class="mb-3">
+                    <label class="form-label">Student Name</label>
+                    <input formControlName="name" type="text" class="form-control">
+                    <div class="form-text">Example: Martin</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Student Age</label>
+                    <input formControlName="Age" type="text" class="form-control">
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="First Grade">
+                    <label formControlName="Class" class="form-check-label" for="inlineRadio1">First Grade</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="Second Grade">
+                    <label formControlName="Class" class="form-check-label" for="inlineRadio2">Second Grade</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                        value="Third Grade">
+                    <label formControlName="Class" class="form-check-label" for="inlineRadio3">Third Grade</label>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+            </form>
+
+            <pre>{{ myForm.value | json }}</pre>
+
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 .grid-wraper{
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #d5d5d8cc;
 }
@@ -8,7 +8,7 @@
 .gird-navbar{
     position: absolute;
     height: 100vh;
-    width: 200px;
+    width: 19%;
     background-color: rgb(197, 197, 226);
     top: 100px;
     left: 0;
@@ -25,6 +25,10 @@
 
 .grid-toolbar{
     height: 100px;
-
-
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

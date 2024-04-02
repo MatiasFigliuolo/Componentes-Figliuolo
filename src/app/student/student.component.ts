@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 interface Student {
 
@@ -23,6 +24,20 @@ export class StudentComponent {
     {Name: "Lucas" , Age: 20 , Class: "Third Grade"},
     {Name: "Matias" , Age: 17 , Class: "First Grade"}
   ]
+
+  showForm = false;
   
+  showStudent () {
+    this.showForm = !this.showForm;
+  }
+
+ myForm = this.formbuilder.group({
+    name: this.formbuilder.control(''),
+    age: this.formbuilder.control(''),
+    Class: this.formbuilder.control(''),
+  });
+  constructor (private formbuilder : FormBuilder){}
 
 }
+
+
