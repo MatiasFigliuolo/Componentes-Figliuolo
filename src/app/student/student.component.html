@@ -15,39 +15,38 @@
         <button (click)="showStudent()">Agregar Alumno</button>
 
         <div *ngIf="showForm">
-
             <form [formGroup]="myForm">
                 <div class="mb-3">
                     <label class="form-label">Student Name</label>
-                    <input formControlName="name" type="text" class="form-control">
+                    <input formControlName="name" type="text" class="form-control" [class.is-valid]= "nameControl?.valid">
                     <div class="form-text">Example: Martin</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Student Age</label>
-                    <input formControlName="Age" type="text" class="form-control">
+                    <input formControlName="age" type="number" class="form-control" [class.is-valid]= "ageControl?.valid">
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                        value="First Grade">
-                    <label formControlName="Class" class="form-check-label" for="inlineRadio1">First Grade</label>
+                    <input formControlName="class" class="form-check-input" type="radio" id="inlineRadio1"
+                        value="First Grade" name="Class">
+                    <label class="form-check-label" for="inlineRadio1">First Grade</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                        value="Second Grade">
-                    <label formControlName="Class" class="form-check-label" for="inlineRadio2">Second Grade</label>
+                    <input formControlName="class" class="form-check-input" type="radio" id="inlineRadio2"
+                        value="Second Grade" name="Class">
+                    <label class="form-check-label" for="inlineRadio2">Second Grade</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                        value="Third Grade">
-                    <label formControlName="Class" class="form-check-label" for="inlineRadio3">Third Grade</label>
+                    <input formControlName="class" class="form-check-input" type="radio" id="inlineRadio3"
+                        value="Third Grade" name="Class">
+                    <label class="form-check-label" for="inlineRadio3">Third Grade</label>
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary" type="submit">Submit form</button>
                 </div>
             </form>
-
+            <pre>{{ myForm.status | json }}</pre>
             <pre>{{ myForm.value | json }}</pre>
-
         </div>
+
     </div>
 </div>
